@@ -2,8 +2,12 @@ const express = require("express");
 const PORT = 8000;
 const app = express();
 
+//setting up views
+app.set("view engine", "ejs");
+app.set("views", "./views");
+
+//For any route go to "./routes/index"
 app.use("/", require("./routes"));
-app.use("/bird", require("./routes/bird"));
 
 app.listen(PORT, function (err) {
   if (err) {
