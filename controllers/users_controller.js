@@ -1,4 +1,10 @@
 const User = require("../models/user");
+
+module.exports.profile = function (req, res) {
+  return res.render("profile", {
+    title: "Profile",
+  });
+};
 // render the signUp page
 module.exports.signUp = function (req, res) {
   return res.render("user_sign_up", {
