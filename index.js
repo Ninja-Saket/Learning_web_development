@@ -4,6 +4,7 @@ const app = express();
 const expressLayouts = require("express-ejs-layouts");
 
 app.use(expressLayouts);
+app.use(express.static("./assets"));
 //For any route go to "./routes/index"
 app.use("/", require("./routes"));
 
