@@ -1,13 +1,15 @@
 const express = require("express");
 const PORT = 8000;
 const app = express();
+const expressLayouts = require("express-ejs-layouts");
+
+app.use(expressLayouts);
+//For any route go to "./routes/index"
+app.use("/", require("./routes"));
 
 //setting up views
 app.set("view engine", "ejs");
 app.set("views", "./views");
-
-//For any route go to "./routes/index"
-app.use("/", require("./routes"));
 
 app.listen(PORT, function (err) {
   if (err) {
